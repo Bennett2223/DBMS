@@ -21,73 +21,46 @@ public class database {
         String input = "";
         String[] mainMenu = { "Customers", "Equipment", "Drones",
                 "Purchase Orders", "Warehouses", "ratings", "Rentals",
-                "Employees", "Department", "Quit" };
-        String[] Equipment = { "Add Equipment", "Update Equipment Information",
-                "Change Equipment Status", "View Equipment",
-                "Return to Main Menu" };
-        String[] Drones = { "Add Drones", "Update Status",
-                "Update Drone Information", "View Drone",
-                "Show Employee Maintenance Records", "Return to Main Menu" };
-        String[] Purchase_Orders = { "Create New Purchase Order",
-                "Cancel Purchase Order", "View Purchase order",
-                "View Orders Between Two Dates", "Return to Main Menu" };
-        String[] Warehouses = { "Add a Warehouse", "Remove a Warehouse",
-                "Update Warehouse Information", "View Warehouse Information",
-                "Return to Main Menu" };
-        String[] Ratings = { "Add a Rating", "Delete Rating", "View Rating",
-                "List 1 Star Ratings", "Return to Main Menu" };
-        String[] Rentals = { "Add Rental", "Remove Rental",
-                "Update Rental Information", "View Rental Information",
-                "Return to Main Menu" };
-        String[] Employees = { "Add Employee", "Update Employee Information",
-                "Delete Employee", "View Employee", "Return to Main Menu" };
-        String[] Department = { "Add Department", "Remove Department",
-                "Update Department Information", "View Department Information",
-                "Employees", "Return to Main Menu" };
+                "Employees", "Department","Useful Reports", "Quit" };
 
         while (isRunning) {
             if (isMainMenu) {
                 System.out.println(
                         "For information pertaining to a topic below, press the corresponding key.");
                 printlist(mainMenu);
-                input = reader.readLine();
+                input = reader.readLine().toUpperCase();
                 switch (input) {
                     case "A": // Customers
                         CustomerMenu.runSubmenu();
                         break;
                     case "B": //Equipment
-                        printlist(Equipment);
-                        input = reader.readLine();
+                        EquipmentMenu.runSubmenu();
                         break;
                     case "C":// Drones
-                        printlist(Drones);
-                        input = reader.readLine();
+                        DroneMenu.runSubmenu();
                         break;
                     case "D": // Purchase Orders
-                        printlist(Purchase_Orders);
-                        input = reader.readLine();
+                        PurchaseOrderMenu.runSubmenu();
                         break;
                     case "E": // Warehouses
-                        printlist(Warehouses);
-                        input = reader.readLine();
+                        WarehouseMenu.runSubmenu();
                         break;
                     case "F": // Ratings
-                        printlist(Ratings);
-                        input = reader.readLine();
+                        RatingsMenu.runSubmenu();
                         break;
                     case "G": // Rentals
-                        printlist(Rentals);
-                        input = reader.readLine();
+                        RentalMenu.runSubmenu();
                         break;
                     case "H": // Employees
-                        printlist(Employees);
-                        input = reader.readLine();
+                        EmployeeMenu.runSubmenu();
                         break;
                     case "I": // Department
-                        printlist(Department);
-                        input = reader.readLine();
+                        DepartmentMenu.runSubmenu();
                         break;
-                    case "J": // Quit
+                    case "J": // Useful Reports
+                        UsefulReportsMenu.runSubmenu();
+                        break;
+                    case "K": // Quit
                         isRunning = false;
                         break;
                     default:
@@ -99,26 +72,3 @@ public class database {
         }
     }
 }
-
-// to copy paste for other menus
-/*
- * switch (input) { case "A": //Add customer
- * 
- * break; case "B": //Equipment
- * 
- * break; case "C":// Drones
- * 
- * break; case "D": // Purchase Orders
- * 
- * break; case "E": // Warehouses
- * 
- * break; case "F": // Ratings break; case "G": // Rentals
- * 
- * break; case "H": // Employees
- * 
- * break; case "I": // Department
- * 
- * break; case "J": // Quit
- * 
- * break; default: System.out.println("Error, bad input. Try again");
- */

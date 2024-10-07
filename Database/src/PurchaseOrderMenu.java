@@ -2,10 +2,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CustomerMenu {
-    final static String[] MenuOptions = { "Add a customer", "Remove a customer",
-            "Update Customer Information", "View Customer information",
-            "Return to Main Menu" };
+public class PurchaseOrderMenu {
+    final static String[] MenuOptions = { "Create New Purchase Order",
+            "Cancel Purchase Order", "View Purchase order",
+            "View Orders Between Two Dates", "Return to Main Menu" };
 
     public static void runSubmenu() throws IOException {
         BufferedReader reader = new BufferedReader(
@@ -16,22 +16,21 @@ public class CustomerMenu {
             database.printlist(MenuOptions);
             input = reader.readLine().toUpperCase();
             switch (input) {
-                case "A": //Add customer
+                case "A": //Create New Purchase Order
 
                     break;
-                case "B": //Remove a customer
+                case "B": //Cancel Purchase Order
 
                     break;
-                case "C":// Update Customer Information
+                case "C": // View Purchase order
 
                     break;
-                case "D": // View Customer information
+                case "D": // View Orders Between Two Dates
 
                     break;
                 case "E": // Return to Main Menu
                     inMenu = false;
                     break;
-
                 default:
                     System.out.println("Error, bad input. Try again");
             }

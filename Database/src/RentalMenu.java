@@ -2,11 +2,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class CustomerMenu {
-    final static String[] MenuOptions = { "Add a customer", "Remove a customer",
-            "Update Customer Information", "View Customer information",
+public class RentalMenu {
+    final static String[] MenuOptions = { "Add Rental", "Remove Rental",
+            "Update Rental Information", "View Rental Information",
             "Return to Main Menu" };
-
     public static void runSubmenu() throws IOException {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(System.in));
@@ -16,22 +15,21 @@ public class CustomerMenu {
             database.printlist(MenuOptions);
             input = reader.readLine().toUpperCase();
             switch (input) {
-                case "A": //Add customer
+                case "A": //Add Rental 
+                	// Is linked to a user through a userID stored in the rental info 
+                    break;
+                case "B": //Delete Rental
 
                     break;
-                case "B": //Remove a customer
-
+                case "C": // Update Rental Information
+                	// Allows you to flag a rental as returned
                     break;
-                case "C":// Update Customer Information
-
-                    break;
-                case "D": // View Customer information
+                case "D": // View Rental Information
 
                     break;
                 case "E": // Return to Main Menu
                     inMenu = false;
                     break;
-
                 default:
                     System.out.println("Error, bad input. Try again");
             }
