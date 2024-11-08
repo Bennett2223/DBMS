@@ -1,11 +1,3 @@
-/CustomerMenu.class
-/database.class
-/EquipmentMenu.class
-/DroneMenu.class
-/PurchaseOrderMenu.class
-/WarehouseMenu.class
-/RatingsMenu.class
-/RentalMenu.class
-/EmployeeMenu.class
-/DepartmentMenu.class
-/UsefulReportsMenu.class
+/GRS.class
+/SQL2.class
+/SQL.class
