@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class EquipmentMenu {
     final static String[] MenuOptions = { "Add Equipment", "Update Equipment Information",
-            "Change Equipment Status", "View Equipment",
+            "Change Equipment Status", "View Equipment","Total Number Of Equipment","Most frequent manufacturer", "Equipment by Type",
             "Return to Main Menu" };
 
     public static void runSubmenu() throws IOException {
@@ -28,7 +28,16 @@ public class EquipmentMenu {
                 case "D": // View Equipment
 
                         break;
-                case "E": // Return to Main Menu
+                case "E": // Total Number Of Equipment
+                	SQL.getTotalNumberEquipmentItems(reader);
+                    break;
+                case "F": // Most Frequent Manufacturer
+                	SQL.ps_MostFrequentEquipmentManufacturer();
+                    break;
+                case "G": // Equipment by Type
+                	SQL.ps_EquipmentbyType();
+                    break;
+                case "H": // Return to Main Menu
                     inMenu = false;
                     break;
                 default:

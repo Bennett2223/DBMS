@@ -53,6 +53,21 @@ public class database {
             System.out.println(letters[i] + ". " + options[i]);
         }
     }
+    
+    public static String getUserInput(BufferedReader reader) throws IOException {
+		String userInput;
+		boolean badInput = true;
+    	do {
+    		userInput=reader.readLine();
+    		badInput = (userInput.contains(";")||userInput.contains(",")||userInput.contains("(")||userInput.contains(")"));
+    		if(badInput) {
+    			System.out.println("Input cannot contain commas, semicolons, or parenthesis");
+    		}
+    	}while(badInput);
+    		
+    	
+    	return userInput;
+    }
 
     public static void main(String Args[]) throws IOException {
     	conn = initializeDB(DATABASE);

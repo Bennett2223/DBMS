@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class RentalMenu {
     final static String[] MenuOptions = { "Add Rental", "Remove Rental",
-            "Update Rental Information", "View Rental Information",
+            "Update Rental Information", "View Rental Information","Most Popular Item",
             "Return to Main Menu" };
     public static void runSubmenu() throws IOException {
         BufferedReader reader = new BufferedReader(
@@ -27,7 +27,10 @@ public class RentalMenu {
                 case "D": // View Rental Information
 
                     break;
-                case "E": // Return to Main Menu
+                case "E": // Most Popular Item
+                	SQL.ps_MostPopularItem();
+                    break;
+                case "F": // Return to Main Menu
                     inMenu = false;
                     break;
                 default:
