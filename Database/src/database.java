@@ -6,9 +6,10 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class database {
 	
-	private static String DATABASE = "Checkpoin3.db";
+	private static String DATABASE = "Checkpoin3DB.db";
 	
 	public static Connection conn = null;
 	
