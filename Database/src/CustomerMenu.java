@@ -4,7 +4,7 @@ import java.io.InputStreamReader;
 
 public class CustomerMenu {
     final static String[] MenuOptions = { "Add a customer", "Remove a customer",
-            "Update Customer Information", "View Customer information",
+            "Update Customer Information", "View Customer information", "Most Frequent Customer",
             "Return to Main Menu" };
 
     public static void runSubmenu() throws IOException {
@@ -28,7 +28,10 @@ public class CustomerMenu {
                 case "D": // View Customer information
 
                     break;
-                case "E": // Return to Main Menu
+                case "E": // View Customer information
+                	SQL.ps_MostFrequentMember();
+                    break;
+                case "F": // Return to Main Menu
                     inMenu = false;
                     break;
 

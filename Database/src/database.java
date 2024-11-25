@@ -6,9 +6,10 @@ import java.sql.DatabaseMetaData;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+
 public class database {
 	
-	private static String DATABASE = "Checkpoin3.db";
+	private static String DATABASE = "Checkpoin3DB.db";
 	
 	public static Connection conn = null;
 	
@@ -52,6 +53,21 @@ public class database {
         for (int i = 0; i < options.length; i++) {
             System.out.println(letters[i] + ". " + options[i]);
         }
+    }
+    
+    public static String getUserInput(BufferedReader reader) throws IOException {
+		String userInput;
+		boolean badInput = true;
+    	do {
+    		userInput=reader.readLine();
+    		badInput = (userInput.contains(";")||userInput.contains(",")||userInput.contains("(")||userInput.contains(")"));
+    		if(badInput) {
+    			System.out.println("Input cannot contain commas, semicolons, or parenthesis");
+    		}
+    	}while(badInput);
+    		
+    	
+    	return userInput;
     }
 
     public static void main(String Args[]) throws IOException {
